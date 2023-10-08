@@ -1,4 +1,4 @@
-# You are going to write a program that will mark a spot on a map with an X.
+# In this assignment, we write a program that will mark a spot on a map with an X.
 
 # This map contains a nested list as follows. 
 
