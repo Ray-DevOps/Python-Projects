@@ -1,3 +1,14 @@
+# In this program, we get to compare brand names (or celebrities) by their Instagram following.
+# we are provided with a data of a number of celebrities (or brands), their occupation (or line of business),
+# their countries of citizenship (as a list of dictionaries). 
+# The program randomly picks two names from the list and ask the user to guess which of the two has higher 
+# Instagram following. If the player makes the correct guess, s/he score 1 point and moves on to the next.
+# Option 2 of a question becomes option 1 of the following question. For example, suppose the player is 
+# asked to pick between A. Christiano Ronaldo and B. Kim Kardashian, and the player correctly picks 
+# Christiano Ronaldo, the next question will now present Kim Kardashian as option A and another celebrity 
+# say Adidas as option B. If the player correctly picks Adidas, then the next question presents Adidas
+# as option A, and another celebrity (or brand) as option B and so on.
+
 brand_names = []
 
 for profiles in data:
@@ -8,18 +19,19 @@ game_over = False
 
 score = [ ]
 
-answer = ""
-
-# if answer == "correct":
-#     name_a = name_b
-#     brand_names.remove(name_a)
-#     name_b = random.choice(brand_names)
-
+name_c = ""
 while game_over == False:
 
-    name_a = random.choice(brand_names)
+    if name_c == "":
+        name_a = random.choice(brand_names)
+    else:
+        name_a = name_c
+
     brand_names.remove(name_a)
     name_b = random.choice(brand_names)
+    name_c = name_b                   # We temporarily store the value of name_b in name_c so that we can 
+                                      # later assign it as value of name_a
+
 
     follower_count_a = 1
     description_a = ""
@@ -66,4 +78,5 @@ while game_over == False:
         print(f"Sorry, that's wrong. Game over. Final score: {sum(score)}")
         break
         game_over = True
+
 
