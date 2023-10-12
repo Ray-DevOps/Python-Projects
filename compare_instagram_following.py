@@ -1,6 +1,7 @@
 # In this program, we get to compare brand names (or celebrities) by their Instagram following.
 # we are provided with a data of a number of celebrities (or brands), their occupation (or line of business),
 # their countries of citizenship (as a list of dictionaries). 
+# The data is available [here] (https://github.com/Ray-DevOps/Python-Projects/blob/main/Instagram_data.txt)
 # The program randomly picks two names from the list and ask the user to guess which of the two has higher 
 # Instagram following. If the player makes the correct guess, s/he score 1 point and moves on to the next.
 # Option 2 of a question becomes option 1 of the following question. For example, suppose the player is 
