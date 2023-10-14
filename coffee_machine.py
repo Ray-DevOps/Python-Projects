@@ -1,21 +1,33 @@
+menu = {
+    "espresso": {
+        "ingredients": {
+            "water": 50,
+            "milk": 0,
+            "coffee": 18,
+        },
+        "cost": 1.5,
+    },
+    "latte": {
+        "ingredients": {
+            "water": 200,
+            "milk": 150,
+            "coffee": 24,
+        },
+        "cost": 2.5,
+    },
+    "cappuccino": {
+        "ingredients": {
+            "water": 250,
+            "milk": 100,
+            "coffee": 24,
+        },
+        "cost": 3.0,
+    }
+}
+
 resources = {"water": 300, "milk": 200, "coffee": 100, "money": 0}
 
 options = list(menu)
-
-entry = (input("What would you like? (espresso/latte/cappuccino): \n")).lower()
-
-valid_entry = False
-while valid_entry == False:
-    if entry in options or entry == 'report':
-        valid_entry = True
-        break
-    else:
-        print(f"Sorry, we do not have {entry} in our menu. Please chose an item from our menu")
-    entry = (input("What would you like? (espresso/latte/cappuccino): \n")).lower()
-
-
-item_details = menu.get(entry)
-cost = item_details.get("cost")
 
 water_required = 0
 milk_required = 0
@@ -31,6 +43,20 @@ coffee_used = 0
 
 operation = 'on'
 while operation == 'on':
+
+    entry = (input("What would you like? (espresso/latte/cappuccino): \n")).lower()
+
+    item_details = menu.get(entry)
+    cost = item_details.get("cost")
+
+    valid_entry = False
+    while valid_entry == False:
+        if entry in options or entry == 'report':
+            valid_entry = True
+            break
+        else:
+            print(f"Sorry, we do not have {entry} in our menu. Please chose an item from our menu")
+        entry = (input("What would you like? (espresso/latte/cappuccino): \n")).lower()
 
     x = list(item_details.values())
     x = x[0]
@@ -63,10 +89,3 @@ while operation == 'on':
             print(f"Here is your {entry}☕. Enjoy!")
 
         item_details = {'ingredients': {'water': 200, 'milk': 150, 'coffee': 24}, 'cost': 2.5}
-
-        print(water_required)
-        print(water_usage)
-        print(water_used)
-
-
-
