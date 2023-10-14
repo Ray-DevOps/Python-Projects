@@ -1,3 +1,9 @@
+# In this program, we create a virtual coffee machine. 
+
+# The detail program requirements is available at the link below
+
+# https://github.com/Ray-DevOps/Python-Projects/blob/main/Coffee%20Machine%20Program%20Requirements.pdf
+
 menu = {
     "espresso": {
         "ingredients": {
