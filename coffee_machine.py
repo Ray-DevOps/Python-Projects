@@ -35,8 +35,13 @@ coffee_usage = [ ]
 payment = [ ]
 item_details = {}
 
-operation = 'on'
-while operation == 'on':
+water_balance = resources.get("water")
+milk_balance = resources.get("milk")
+coffee_balance = resources.get("coffee")
+money_balance = resources.get("money")
+
+operation = True
+while operation == True:
 
     entry = (input("What would you like? (espresso/latte/cappuccino): \n")).lower()
 
@@ -45,15 +50,25 @@ while operation == 'on':
         if entry in options or entry == "report" or entry == "off":
             valid_entry = True
             break
+        elif entry == "off":
+            pass
         else:
             print(f"Sorry, we do not have {entry} in our menu. Please chose an item from our menu")
         entry = (input("What would you like? (espresso/latte/cappuccino): \n")).lower()
+
+    if entry == "report":
+        print(f"BALANCE REPORT\n--------------\nWater: {water_balance}ml \nMilk: {milk_balance}ml \nCoffee: {coffee_balance}g \nMoney: ${money_balance}")
+        break
+
+    if entry == "off":
+        operation = False
+        break
 
     if entry in options:
         item_details = menu.get(entry)
         cost = item_details.get("cost")
 
-    if entry in options:
+    if entry in options or entry == "report":
 
         x = list(item_details.values())
         x = x[0]
@@ -98,16 +113,11 @@ while operation == 'on':
                 print(f"Here is your {entry}☕. Enjoy!")
             elif money_entered < cost:
                 print(f"Sorry that's not enough money. Your ${money_entered} refunded.")
+                break
             else:
                 print(f"Here is your {entry}☕. Enjoy!")
 
-        elif entry == "report":
-            print(f"BALANCE REPORT\n----------------\nWater: {water_balance}ml \nMilk: {milk_balance}ml \nCoffee: {coffee_balance}g \nMoney: ${money_balance}")
 
-
-        if entry == "off":
-            operation != 'on'
-            break
 
 
 
