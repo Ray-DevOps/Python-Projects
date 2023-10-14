@@ -29,17 +29,10 @@ resources = {"water": 300, "milk": 200, "coffee": 100, "money": 0}
 
 options = list(menu)
 
-water_required = 0
-milk_required = 0
-coffee_required = 0
-
 water_usage = [ ]
 milk_usage =  [ ]
 coffee_usage = [ ]
-
-water_used = 0
-milk_used = 0
-coffee_used = 0
+payment = [ ]
 
 operation = 'on'
 while operation == 'on':
@@ -65,10 +58,26 @@ while operation == 'on':
     coffee_required = x.get('coffee')
     water_usage.append(water_required)
     water_used = sum(water_usage)
+    water_balance = resources.get("water") - water_used
     milk_usage.append(milk_required)
     milk_used = sum(milk_usage)
+    milk_balance = resources.get("milk") - milk_used
     coffee_usage.append(coffee_required)
     coffee_used = sum(coffee_usage)
+    coffee_balance = resources.get("coffee") - coffee_used
+    payment.append(cost)
+    money_balance = sum(payment)
+
+    if water_balance < 0:
+        print(f"Sorry! the available water is not sufficient to make a {entry}")
+        break
+    if milk_balance < 0:
+        print(f"Sorry! the available water is not sufficient to make a {entry}")
+        break
+    if coffee_balance < 0:
+        print(f"Sorry! the available water is not sufficient to make a {entry}")
+        break
+
     if entry in options:
         print("Please insert coins.")
         quarters = float(input("how many quarters?: "))
@@ -88,4 +97,5 @@ while operation == 'on':
         else:
             print(f"Here is your {entry}☕. Enjoy!")
 
-        item_details = {'ingredients': {'water': 200, 'milk': 150, 'coffee': 24}, 'cost': 2.5}
+    # if entry == 'report':
+    #     print(f"Water: {water_balance}ml \n Milk: {milk_balance}ml \n Coffee: {coffee_balance}g \n Money: $")
