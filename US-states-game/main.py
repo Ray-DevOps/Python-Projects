@@ -2,7 +2,7 @@
 #                                         DESCRIPTION
 #                                  ------------------------
 
-# In this project, we are provided with an image of the map of the united states with names of states blanked out (blanked_states_img.gif).
+# In this project, we are provided with an image of the map of the united states with names of states blanked out (blank_states_img.jpg).
 # We are also presented with a cvs file with names of the 50 states as well as their x and y coordinates (see 50_states.csv)
 # The player will be presented with a prompt to enter the name of any state. The purpose of the game is to test the
 # players knowledge of the states in the United States. Entries are case insensitive.
