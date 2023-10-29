@@ -3,7 +3,7 @@
 #                 --------------------------------------
 
 # In this project, we build a stop-watch whereby when we click on the "start" button, the watch starts a count-down
-# from 5 minutes till 0. We use a tomato image for design (see tomato.png)
+# from 5 minutes till 0. We use a tomato image for design. See tomato.png [here] (https://github.com/Ray-DevOps/Python-Projects/blob/main/stop-watch/tomato.png)
 # We use tkinter to build the widgets of the GUI such as the buttons and labels
 # We use canvas to be able to write on the background image, etc. Canvas allows us to write or paste an image on another image
 
