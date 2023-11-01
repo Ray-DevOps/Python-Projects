@@ -2,7 +2,8 @@
 #           ------------------------
 
 # In this project, we check whther the day of the week is Wednesday. If yes, we send a
-# randon motivational message to a friend from a list of messages in the txt file
+# randon motivational message to a friend from a list of messages in the txt file.
+# See quotes.txt [here] (https://github.com/Ray-DevOps/Python-Projects/tree/main/sending-motivational-quotes)
 
 
 import smtplib
@@ -14,7 +15,7 @@ quotes_list = [ ]
 with open('quotes.txt') as quotes:
     lines = quotes.readlines()
     for line in lines:
-        line = line.strip()
+        line = line.strip()                       # line.strip() gets rid of the \n at the end of each line
         quotes_list.append(line)
 
 message = random.choice(quotes_list)
