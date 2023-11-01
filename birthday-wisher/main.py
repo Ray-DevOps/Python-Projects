@@ -3,10 +3,10 @@
 #                 ----------------------------------------
 
 # In this project, we create a birthday wisher application. We have a csv file with names, emails and year, month, day of birth
-# of our friends and relatives. CSV file [here] ()
+# of our friends and relatives. CSV file [here] (https://github.com/Ray-DevOps/Python-Projects/blob/main/birthday-wisher/birthdays.csv)
 # We also have a folder in the present directory. The folder contains 5 templates of birthday wish message, so that we don't get
 # to send the same message all the time, or the same message to different people
-# Please see template folder [here]
+# Please see template folder [here] (https://github.com/Ray-DevOps/Python-Projects/tree/main/birthday-wisher/letter-templates)
 
 import csv
 import datetime as dt
